@@ -33,4 +33,20 @@ export const projects = [
       image: "./drawing.jpg",
       link: "#drawing",
     },
+    {
+      title: "Reading",
+      subtitle: "Fantasy and Historical Fiction",
+      description:
+        "Vocabulary degradation is real",
+      image: "./reading.jpg",
+      link: "https://www.goodreads.com/user/show/103212523-frank-long",
+    },
+    {
+      title: "Manga",
+      subtitle: "Japanese Comics",
+      description:
+        "A picture is worth a thousand words",
+      image: "./manga.jpg",
+      link: "https://myanimelist.net/profile/dragonsp",
+    },
   ];
