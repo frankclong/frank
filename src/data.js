@@ -49,4 +49,12 @@ export const projects = [
       image: "./manga.jpg",
       link: "https://myanimelist.net/profile/dragonsp",
     },
+    {
+      title: "Languages",
+      subtitle: "French and Mandarin",
+      description:
+        "Slow and steady journey to fluency",
+      image: "./languages.jpg",
+      link: "#languages",
+    },
   ];
