@@ -42,7 +42,7 @@ export const projects = [
       subtitle: "Fantasy and Historical Fiction",
       description:
         "Vocabulary degradation is real",
-      image: "./reading.jpg",
+      image: "./reading.jpeg",
       link: "https://www.goodreads.com/user/show/103212523-frank-long",
       target : "_blank",
     },
