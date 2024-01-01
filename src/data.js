@@ -8,6 +8,7 @@ export const projects = [
         "Check out some of my projects where I worked with web apps, machine learning, and data visualization!",
       image: "./coding.jpg",
       link: "https://github.com/frankclong",
+      target : "_blank",
     },
     {
       title: "Wine",
@@ -16,6 +17,7 @@ export const projects = [
         "Follow my journey into the beautiful world of fermented grape juice",
       image: "./wine.jpg",
       link: "#wine",
+      target : "",
     },
     {
       title: "Chess",
@@ -23,7 +25,8 @@ export const projects = [
       description:
         "Track my progress as I flip flop between wanting to become a national master and hating chess",
       image: "./chess.png",
-      link: "https://www.chess.com/member/dragonsp",
+      link: "#chess",
+      target : "",
     },
     {
       title: "Drawing",
@@ -32,6 +35,7 @@ export const projects = [
         "For the twice a year spouts of inspiration I get",
       image: "./drawing.jpg",
       link: "#drawing",
+      target : "",
     },
     {
       title: "Reading",
@@ -40,6 +44,7 @@ export const projects = [
         "Vocabulary degradation is real",
       image: "./reading.jpg",
       link: "https://www.goodreads.com/user/show/103212523-frank-long",
+      target : "_blank",
     },
     {
       title: "Manga",
@@ -48,6 +53,7 @@ export const projects = [
         "A picture is worth a thousand words",
       image: "./manga.jpg",
       link: "https://myanimelist.net/profile/dragonsp",
+      target : "_blank",
     },
     {
       title: "Languages",
@@ -56,5 +62,6 @@ export const projects = [
         "Slow and steady journey to fluency",
       image: "./languages.jpg",
       link: "#languages",
+      target : "",
     },
   ];
