@@ -5,6 +5,7 @@ import About from './components/About.js';
 import Projects from './components/Projects.js';
 import Navbar from './components/Navbar.js';
 import Chess from './components/Chess.js';
+import Wine from './components/Wine.js';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Projects />
       <Chess />
+      <Wine />
     </main>
   );
 }
