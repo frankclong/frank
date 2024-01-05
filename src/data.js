@@ -33,7 +33,7 @@ export const projects = [
       subtitle: ":3",
       description:
         "For the twice a year spouts of inspiration I get",
-      image: "./drawing.jpg",
+      image: "./drawing.png",
       link: "#drawing",
       target : "",
     },

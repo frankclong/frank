@@ -6,6 +6,7 @@ import Projects from './components/Projects.js';
 import Navbar from './components/Navbar.js';
 import Chess from './components/Chess.js';
 import Wine from './components/Wine.js';
+import Drawings from './components/Drawings.js';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Projects />
       <Chess />
       <Wine />
+      <Drawings />
     </main>
   );
 }
