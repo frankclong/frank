@@ -14,7 +14,7 @@ export default function Wine() {
                 <br></br>
 
                 {WINES.map(wine => (
-                    <div className = "flex items-center justify-center mb-4">
+                    <div key={wine.name} className = "flex items-center justify-center mb-4">
                     <div className="bg-red-900 shadow-md rounded-md p-8 max-w-2xl w-full">
                         <div className="flex items-center">
                             <div className="flex-shrink-0 w-1/2 mr-4">

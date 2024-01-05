@@ -54,17 +54,17 @@ export default function Chess() {
                     <h2 className="text-lg font-semibold ml-4">Lichess</h2>
                 </div>
 
-                <p class="text-xl font-bold mb-4">
-                    <a href="https://lichess.org/@/dragonsp" class="text-white-500" target="_blank">
+                <p className="text-xl font-bold mb-4">
+                    <a href="https://lichess.org/@/dragonsp" className="text-white-500" target="_blank">
                         {lichessData ? lichessData['username'] : "Loading..."}
                         </a>
                 </p>
-                <div class="flex justify-center mx-auto mb-2">
+                <div className="flex justify-center mx-auto mb-2">
                     {
                         TIME_CONTROLS.map(timeControl => (
-                            <div class="flex-shrink-0 mr-4">
-                                <span class="font-semibold">{timeControl}</span>
-                                <span class="ml-2">{lichessData ? lichessData['perfs'][LICHESS_TIME_CONTROL_MAP[timeControl]]['rating'] : "Loading..."}</span>
+                            <div key={"lichess" + timeControl} className="flex-shrink-0 mr-4">
+                                <span className="font-semibold">{timeControl}</span>
+                                <span className="ml-2">{lichessData ? lichessData['perfs'][LICHESS_TIME_CONTROL_MAP[timeControl]]['rating'] : "Loading..."}</span>
                             </div>
                         ))
                     }
@@ -77,17 +77,17 @@ export default function Chess() {
                     <h2 className="text-lg font-semibold ml-4">Chess.com</h2>
                 </div>
 
-                <p class="text-xl font-bold mb-4">
-                    <a href="https://www.chess.com/member/dragonsp" class="text-white-500" target="_blank">
+                <p className="text-xl font-bold mb-4">
+                    <a href="https://www.chess.com/member/dragonsp" className="text-white-500" target="_blank">
                         {CHESS_DOT_COM_USERNAME}
                         </a>
                 </p>
-                <div class="flex justify-center mx-auto mb-2">
+                <div className="flex justify-center mx-auto mb-2">
                     {
                         TIME_CONTROLS.map(timeControl => (
-                            <div class="flex-shrink-0 mr-4">
-                                <span class="font-semibold">{timeControl}</span>
-                                <span class="ml-2">{chessDotComData ? chessDotComData[CHESS_DOT_COM_TIME_CONTROL_MAP[timeControl]]['last']['rating'] : "Loading..."}</span>
+                            <div key={"chessDotCom" + timeControl} className="flex-shrink-0 mr-4">
+                                <span className="font-semibold">{timeControl}</span>
+                                <span className="ml-2">{chessDotComData ? chessDotComData[CHESS_DOT_COM_TIME_CONTROL_MAP[timeControl]]['last']['rating'] : "Loading..."}</span>
                             </div>
                         ))
                     }
