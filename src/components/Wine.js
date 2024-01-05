@@ -5,7 +5,7 @@ import { WINES } from "../wineData";
 export default function Wine() {
     return (
         <section id="wine">
-            <div className="bg-red-950 container px-5 py-5 mx-auto text-center lg:px-40 text-white">   
+            <div className="bg-red-950 px-5 py-5 mx-auto text-center lg:px-40 text-white">   
                 <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
                     Wine
                 </h1>
