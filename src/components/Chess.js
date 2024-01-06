@@ -28,7 +28,6 @@ export default function Chess() {
           .then(response => response.json())
           .then(responseJson => {
             setLichessData(responseJson);
-            console.log(responseJson);
         })
           .catch(error => console.error(error));
       }, []);
@@ -38,7 +37,6 @@ export default function Chess() {
           .then(response => response.json())
           .then(responseJson => {
             setChessDotComData(responseJson);
-            console.log(responseJson);
         })
           .catch(error => console.error(error));
       }, []);

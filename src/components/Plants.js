@@ -49,7 +49,7 @@ function PlantCard({plant, index}) {
     }
 }
 
-export default function plant() {
+export default function Plants() {
     return (
         <section id="plants">
             <div className="bg-emerald-950 px-5 py-5 mx-auto text-center lg:px-40 text-white">   
@@ -57,14 +57,13 @@ export default function plant() {
                     Plants
                 </h1>
                 {PLANTS.map((plant, index) => (
-                    <div key={plant.name} className = "flex items-center justify-center mb-4">
-                    <div className="bg-emerald-900 shadow-md rounded-md p-8 max-w-2xl w-full">
-                        <PlantCard plant={plant} index={index}/>   
-                    </div>
+                    <div key={plant.nickname} className = "flex items-center justify-center mb-4">
+                        <div className="bg-emerald-900 shadow-md rounded-md p-8 max-w-2xl w-full">
+                            <PlantCard plant={plant} index={index}/>   
+                        </div>
                     </div>
                 ))}
-
-                </div>
+            </div>
         </section>
     )
 }
