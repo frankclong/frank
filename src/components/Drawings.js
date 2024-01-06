@@ -30,7 +30,7 @@ export default function Drawings() {
                 </h1>
 
                 {DRAWINGS.sort(compareDrawingDate).reverse().map(drawing => (
-                    <div className = "flex items-center justify-center mb-4">
+                    <div key={drawing.caption} className = "flex items-center justify-center mb-4">
                         <div className="bg-gray-600 shadow-md rounded-md p-8 max-w-2xl">
                             <div className="flex justify-center items-center mb-2">
                                 <img src={drawing.image} alt={drawing.caption} className="h-96 w-auto object-cover"/>
