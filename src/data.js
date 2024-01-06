@@ -64,4 +64,13 @@ export const projects = [
       link: "#languages",
       target : "",
     },
+    {
+      title: "Plants",
+      subtitle: "Low maintenance pets",
+      description:
+        "The joys and pains of life and death",
+      image: "./plants.jpg",
+      link: "#plants",
+      target : "",
+    },
   ];

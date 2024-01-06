@@ -7,6 +7,7 @@ import Navbar from './components/Navbar.js';
 import Chess from './components/Chess.js';
 import Wine from './components/Wine.js';
 import Drawings from './components/Drawings.js';
+import Plants from './components/Plants.js';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Chess />
       <Wine />
       <Drawings />
+      <Plants />
     </main>
   );
 }
