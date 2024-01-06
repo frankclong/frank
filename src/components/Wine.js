@@ -2,6 +2,47 @@
 import React from "react";
 import { WINES } from "../wineData";
 
+function WineImage({wine}) {
+    return  (
+        <div className="flex-shrink-0 w-1/2">
+            <img src={wine.image} alt={wine.name} className="object-cover"/>
+        </div>);
+}
+
+function WineDesc({wine}) {
+    return (
+        <div className="justify-center">
+            <h1 className="text-2xl font-semibold mb-4">{wine.name}</h1>
+            <ul className="list-none pl-0 mb-4">
+                <li>{wine.region}</li>
+                <li>{wine.vintage}</li>
+                <li>{wine.variety}</li>
+                <li>${wine.priceCAD}</li>
+            </ul>
+            <p>{wine.notes}</p>
+        </div>
+    )
+}
+
+function WineCard({wine, index}) {
+    if (index % 2 == 0) {
+        return (
+            <div className="flex items-center space-x-4">
+                <WineImage wine={wine}/>
+                <WineDesc wine={wine}/>
+            </div>
+        );
+    }
+    else {
+        return (
+            <div className="flex items-center space-x-4">
+                <WineDesc wine={wine}/>
+                <WineImage wine={wine}/>
+            </div>
+        );
+    }
+}
+
 export default function Wine() {
     return (
         <section id="wine">
@@ -13,25 +54,10 @@ export default function Wine() {
                 <p>Chilean Carmenere, Cab sauv, Grenache from Rhone, Garnacha from Spain, Merlot, Nebbiolo, Pinot Noir, Sangiovese, South African Pinotage, Syrah from Rhone</p>
                 <br></br>
 
-                {WINES.map(wine => (
+                {WINES.map((wine, index) => (
                     <div key={wine.name} className = "flex items-center justify-center mb-4">
                     <div className="bg-red-900 shadow-md rounded-md p-8 max-w-2xl w-full">
-                        <div className="flex items-center">
-                            <div className="flex-shrink-0 w-1/2 mr-4">
-                                <img src={wine.image} alt={wine.name} className="object-cover"/>
-                            </div>
-                            
-                            <div className="justify-center">
-                                <h1 className="text-2xl font-semibold mb-4">{wine.name}</h1>
-                                <ul className="list-none pl-0 mb-4">
-                                    <li>{wine.region}</li>
-                                    <li>{wine.vintage}</li>
-                                    <li>{wine.variety}</li>
-                                    <li>${wine.priceCAD}</li>
-                                </ul>
-                                <p>{wine.notes}</p>
-                            </div>
-                        </div>
+                        <WineCard wine={wine} index={index}/>   
                     </div>
                     </div>
                 ))}
