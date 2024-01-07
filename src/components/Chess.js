@@ -43,7 +43,7 @@ export default function Chess() {
 
     return (
         <section id="chess">
-            <div className="container px-5 py-10 mx-auto text-center lg:px-40">
+            <div className="bg-stone-900 px-5 py-10 mx-auto text-center lg:px-40">
                 <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
                     Chess
                 </h1>
