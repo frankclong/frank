@@ -38,10 +38,10 @@ export const hobbies = [
       target : "",
     },
     {
-      title: "Drawing",
+      title: "Drawing, Painting, Sketching",
       subtitle: "Art",
       description:
-        "For the twice a year spouts of inspiration I get",
+        "Capturing the rare spouts of inspiration",
       image: "./drawing.png",
       link: "#drawing",
       target : "",

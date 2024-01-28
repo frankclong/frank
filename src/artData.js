@@ -25,7 +25,7 @@ export const ARTWORKS = [
         "month" : 11
     },
     {
-        "image" : "./" + art_dir + "/mountain_notebook.png",
+        "image" : "./" + art_dir + "/mountain_notebook.jpg",
         "caption" : "Notebook painting of an original mountain landscape",
         "year" : 2024,
         "month" : 1

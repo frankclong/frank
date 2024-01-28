@@ -40,7 +40,7 @@ export const WINES = [
         "image" : "./" + wine_dir + "/catena-malbec-2021.jpg",
         "name" : "Catena Malbec",
         "vintage" : 2021,
-        "notes" : "Very smooth, good balance. Med bodied, relatively low acidity and tannins. Overall very enjoyable. ",
+        "notes" : "An awesome wine. Great balance, not bitter, very smooth. Med-full bodied, relatively lower tannins and acidity. A longer finish. Oaky and black fruit aroma and tastes. Eager to try more malbecs.",
         "variety" : "Malbec",
         "region" : "Mendoza, Argentina",
         "priceCAD" : 23.95
