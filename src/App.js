@@ -6,7 +6,7 @@ import Hobbies from './components/Projects.js';
 import Navbar from './components/Navbar.js';
 import Chess from './components/Chess.js';
 import Wine from './components/Wine.js';
-import Drawings from './components/Drawings.js';
+import Artworks from './components/Artworks.js';
 import Plants from './components/Plants.js';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <Hobbies />
       <Chess />
       <Wine />
-      <Drawings />
+      <Artworks />
       <Plants />
     </main>
   );
