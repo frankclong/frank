@@ -40,9 +40,18 @@ export const WINES = [
         "image" : "./" + wine_dir + "/catena-malbec-2021.jpg",
         "name" : "Catena Malbec",
         "vintage" : 2021,
-        "notes" : "TBT (To be tasted). Purchased a few months ago. Super excited to try, heard great things about Malbec!",
+        "notes" : "Very smooth, good balance. Med bodied, relatively low acidity and tannins. Overall very enjoyable. ",
         "variety" : "Malbec",
         "region" : "Mendoza, Argentina",
         "priceCAD" : 23.95
+    },
+    {
+        "image" : "./" + wine_dir + "/apothic-red.jpg",
+        "name" : "Apothic Red",
+        "vintage" : 2020,
+        "notes" : "Med-full bodied. Med tannins, med-high acidity. Solid wine, not too complex but nice to drink. Do not have with spicy food!!",
+        "variety" : "Blend (Syrah, Zinfandel, Merlot)",
+        "region" : "California, USA",
+        "priceCAD" : -1
     }
 ]

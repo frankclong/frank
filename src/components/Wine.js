@@ -10,6 +10,14 @@ function WineImage({wine}) {
 }
 
 function WineDesc({wine}) {
+    let priceText;
+    if (wine.priceCAD === -1) {
+        priceText = "Gift"
+    }
+    else {
+        priceText = "$" + wine.priceCAD;
+    }
+
     return (
         <div className="justify-center">
             <h1 className="text-2xl font-semibold mb-4">{wine.name}</h1>
@@ -17,7 +25,7 @@ function WineDesc({wine}) {
                 <li>{wine.region}</li>
                 <li>{wine.vintage}</li>
                 <li>{wine.variety}</li>
-                <li>${wine.priceCAD}</li>
+                <li>{priceText}</li>
             </ul>
             <p>{wine.notes}</p>
         </div>
