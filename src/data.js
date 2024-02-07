@@ -65,6 +65,15 @@ export const hobbies = [
       target : "",
     },
     {
+      title: "Crochet",
+      subtitle: "I'm hooked",
+      description:
+        "Learned with a Woobles kit!",
+      image: "./crochet.jpeg",
+      link: "#crochet",
+      target : "",
+    },
+    {
       title: "Travel",
       subtitle: "Exploring the world",
       description:

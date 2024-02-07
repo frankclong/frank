@@ -8,6 +8,7 @@ import Chess from './components/Chess.js';
 import Wine from './components/Wine.js';
 import Artworks from './components/Artworks.js';
 import Plants from './components/Plants.js';
+import Crochet from './components/Crochet.js';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Wine />
       <Artworks />
       <Plants />
+      <Crochet />
     </main>
   );
 }
