@@ -31,7 +31,7 @@ function PlantDesc({plant}) {
 }
 
 function PlantCard({plant, index}) {
-    if (index % 2 == 0) {
+    if (index % 2 === 0) {
         return (
             <div className="flex items-center space-x-4">
                 <PlantImage plant={plant}/>

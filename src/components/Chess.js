@@ -48,12 +48,12 @@ export default function Chess() {
                     Chess
                 </h1>
                 <div className="flex items-center justify-center mb-2">
-                    <img src="./lichess.png" alt="Your Image" className="w-10 h-10 rounded-full" />
+                    <img src="./lichess.png" alt="lichess" className="w-10 h-10 rounded-full" />
                     <h2 className="text-lg font-semibold ml-4">Lichess</h2>
                 </div>
 
                 <p className="text-xl font-bold mb-4">
-                    <a href="https://lichess.org/@/dragonsp" className="text-white-500" target="_blank">
+                    <a href="https://lichess.org/@/dragonsp" className="text-white-500" target="_blank" rel="noreferrer">
                         {lichessData ? lichessData['username'] : "Loading..."}
                         </a>
                 </p>
@@ -71,12 +71,12 @@ export default function Chess() {
                 <br></br>
 
                 <div className="flex items-center justify-center mb-2">
-                    <img src="./chesscom.png" alt="Your Image" className="w-7 h-10" />
+                    <img src="./chesscom.png" alt="chess.com" className="w-7 h-10" />
                     <h2 className="text-lg font-semibold ml-4">Chess.com</h2>
                 </div>
 
                 <p className="text-xl font-bold mb-4">
-                    <a href="https://www.chess.com/member/dragonsp" className="text-white-500" target="_blank">
+                    <a href="https://www.chess.com/member/dragonsp" className="text-white-500" target="_blank" rel="noreferrer">
                         {CHESS_DOT_COM_USERNAME}
                         </a>
                 </p>

@@ -17,19 +17,19 @@ function Header() {
                     <ul className="dropdown">
                     <li><a href="elements.html" className="nav-link">Elements</a></li>
                     <li className="has-children">
-                        <a href="#">Menu Two</a>
+                        <a href="#hobbies">Menu Two</a>
                         <ul className="dropdown">
-                        <li><a href="#" className="nav-link">Sub Menu One</a></li>
-                        <li><a href="#" className="nav-link">Sub Menu Two</a></li>
-                        <li><a href="#" className="nav-link">Sub Menu Three</a></li>
+                        <li><a href="#chess" className="nav-link">Sub Menu One</a></li>
+                        <li><a href="#wine" className="nav-link">Sub Menu Two</a></li>
+                        <li><a href="#drawing" className="nav-link">Sub Menu Three</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" className="nav-link">Menu Three</a></li>
+                    <li><a href="#about" className="nav-link">Menu Three</a></li>
                     </ul>
                 </li>
                 <li><a href="#contact-section" className="nav-link">Contact us</a></li>
                 </ul>
-                <a href="#" className="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-inline-block" data-toggle="collapse" data-target="#main-navbar">
+                <a href="#about" className="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-inline-block" data-toggle="collapse" data-target="#main-navbar">
                 <span />
                 </a>
             </div>

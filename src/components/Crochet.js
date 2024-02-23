@@ -18,9 +18,9 @@ export default function Crochet() {
                 <br></br>
                 
                 <div className = "flex items-center justify-center space-x-5 mr-4 ml-4">
-                    <img src={CROCHET_DIR + "lion1.jpeg"} alt="Your Image" className="object-cover w-1/3"/>
-                    <img src={CROCHET_DIR + "lion2.jpg"} alt="Your Image" className="object-cover w-1/3"/>
-                    <img src={CROCHET_DIR + "lion3.jpg"} alt="Your Image" className="object-cover w-1/3"/>
+                    <img src={CROCHET_DIR + "lion1.jpeg"} alt="Part 1" className="object-cover w-1/3"/>
+                    <img src={CROCHET_DIR + "lion2.jpg"} alt="Part 2" className="object-cover w-1/3"/>
+                    <img src={CROCHET_DIR + "lion3.jpg"} alt="Part 3" className="object-cover w-1/3"/>
                 </div>
             </div>
         </section>

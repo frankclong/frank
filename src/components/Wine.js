@@ -33,7 +33,7 @@ function WineDesc({wine}) {
 }
 
 function WineCard({wine, index}) {
-    if (index % 2 == 0) {
+    if (index % 2 === 0) {
         return (
             <div className="flex items-center space-x-4">
                 <WineImage wine={wine}/>

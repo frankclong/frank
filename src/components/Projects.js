@@ -4,7 +4,7 @@ import React from "react";
 import { hobbies } from "../data";
 
 function ProjectWrapper({project}) {
-  if (project.link == "") {
+  if (project.link === "") {
     return (<div
       key={project.image}
       className="sm:w-1/4 w-100 p-4">

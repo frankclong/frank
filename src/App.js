@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header.js';
 import About from './components/About.js';
 import Hobbies from './components/Projects.js';
 import Navbar from './components/Navbar.js';
