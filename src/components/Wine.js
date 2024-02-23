@@ -59,7 +59,9 @@ export default function Wine() {
                     Wine
                 </h1>
                 <p>Currently tasting through various red wine varieties/regions! Would be super open for recommendations.</p>
-                <p>Chilean Carmenere, Cab sauv, Grenache from Rhone, Garnacha from Spain, Merlot, Nebbiolo, Pinot Noir, Sangiovese, South African Pinotage, Syrah from Rhone</p>
+                <p>Reds I want to try: Canadian Cab Sauv/Cab Franc/Pinot Noir, South African Cab Sauv, South African Pinotage, 
+                    Burgundy (Pinot Noir), Bordeaux Cab sauv, Bordeaux Merlot, Bordeaux Cab Franc, GSM blend from Southern Rhone, Syrah from Northern Rhone, 
+                    Garnacha from Spain, Nebbiolo, Sangiovese</p>
                 <br></br>
 
                 {WINES.map((wine, index) => (
