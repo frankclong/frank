@@ -53,5 +53,14 @@ export const WINES = [
         "variety" : "Blend (Syrah, Zinfandel, Merlot)",
         "region" : "California, USA",
         "priceCAD" : -1
+    },
+    {
+        "image" : "./" + wine_dir + "/roda-2019.jpg",
+        "name" : "Roda Reserva",
+        "vintage" : 2019,
+        "notes" : "A gift from a friend who visited Spain. Full bodied, med-high acidity, high tannins. Fruity and oaky. Much more complex than the previous Rioja I had. Very enjoyable to drink with plenty of flavours and properties working together in a well-balanced fashion.",
+        "variety" : "Tempranillo",
+        "region" : "Rioja, Spain",
+        "priceCAD" : -1
     }
 ]
