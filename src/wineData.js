@@ -62,5 +62,32 @@ export const WINES = [
         "variety" : "Tempranillo",
         "region" : "Rioja, Spain",
         "priceCAD" : -1
+    },
+    {
+        "image" : "./" + wine_dir + "/wolf-blass-2002.jpg",
+        "name" : "Wolf Blass Red Label Shiraz Cabernet Sauvignon",
+        "vintage" : 2002,
+        "notes" : "Received from a family friend who no longer drinks wine. First time trying such an aged wine and I'm pretty sure this one isn't supposed to be aged. An interesting experience from the uncorking. The cork was falling apart and I tried to carefully remove it. Thankfully no chunks fell into the wine but a few crumbs did but honestly no big deal. I forgot sediment was a thing so upon pour and examining there were a lot of particles floating around. Again, didn't really affect the experience. Immediately noticed the colour was brownish. Wasn't getting much aromas from it. At this point I feared the worst and that the wine was undrinkable. Tasting it wasn't too bad though. Low body and tannins, high acidity but not too overpowering. Definitely not what I expected from a Shiraz/Cab Sauv. Overall, it wasn't bad and I will plan to finish the whole bottle but it is safe to say I will not be hunting more of these bottles",
+        "variety" : "Shiraz, Cabernet Sauvignon",
+        "region" : "Southeastern Australia",
+        "priceCAD" : -1
+    },
+    {
+        "image" : "./" + wine_dir + "/montes-alpha-2021.jpg",
+        "name" : "Montes Alpha Carmenere",
+        "vintage" : 2021,
+        "notes" : "Medium bodied, medium acidity, low-med tannins. Fruit forward, hints of pepper, mocha, cola, chocolate. Enjoyable wine, but nothing that really stood out to me.",
+        "variety" : "Carmenere",
+        "region" : "Colchagua Valley, Chile",
+        "priceCAD" : 19.95
+    },
+    {
+        "image" : "./" + wine_dir + "/magnotta-1996.jpg",
+        "name" : "Magnotta Millenium",
+        "vintage" : 1996,
+        "notes" : "A wine that's older than me! Wasn't careful when uncorking and had to push the cork in. An enjoyable wine, hints of mint and vanilla. Seemed a bit aged for too long.",
+        "variety" : "Cabernet Sauvignon",
+        "region" : "Ontario, Canada",
+        "priceCAD" : -1
     }
 ]
