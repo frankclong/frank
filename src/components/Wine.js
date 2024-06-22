@@ -58,10 +58,11 @@ export default function Wine() {
                 <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
                     Wine
                 </h1>
-                <p>Currently tasting through various red wine varieties/regions! Would be super open for recommendations.</p>
-                <p>Reds I want to try: Canadian Cab Sauv/Cab Franc/Pinot Noir, South African Cab Sauv, South African Pinotage, 
-                    Burgundy (Pinot Noir), Bordeaux Cab sauv, Bordeaux Merlot, Bordeaux Cab Franc, GSM blend from Southern Rhone, Syrah from Northern Rhone, 
-                    Garnacha from Spain, Nebbiolo, Sangiovese</p>
+                <p>Currently tasting through various red wine varieties/regions. Open to recommendations!</p>
+                <p>Reds I want to try: Canadian Cab Sauv/Cab Franc/Pinot Noir, South African Cab Sauv,
+                    Burgundy (Pinot Noir), Bordeaux Merlot, Bordeaux Cab Franc, Syrah from Northern Rhone, 
+                    Nebbiolo, Sangiovese</p>
+                <p>In the cellar: Canadian Cab Sauv, Bordeaux Cab sauv (x2), GSM blend from Southern Rhone</p>
                 <br></br>
 
                 {WINES.map((wine, index) => (

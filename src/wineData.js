@@ -103,7 +103,7 @@ export const WINES = [
         "image" : "./" + wine_dir + "/boschendal-2020.jpg",
         "name" : "Boschendal ",
         "vintage" : 2020,
-        "notes" : "Forgot to jot down notes after tasting. From what I remember, it was more earthy tones. Medium-full body and medium tannins.",
+        "notes" : "Forgot to jot down notes after tasting. From what I remember, it was more earthy tones. Medium-full body and medium tannins. Overall enjoyable",
         "variety" : "Pinotage",
         "region" : "Stellenbosch, South Africa",
         "priceCAD" : 20.95
