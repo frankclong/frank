@@ -89,5 +89,32 @@ export const WINES = [
         "variety" : "Cabernet Sauvignon",
         "region" : "Ontario, Canada",
         "priceCAD" : -1
+    },
+    {
+        "image" : "./" + wine_dir + "/quinta-de-ventozelo-2018.jpg",
+        "name" : "Quinta de Ventozelo",
+        "vintage" : 2018,
+        "notes" : "Not a fan of this one. Not much aroma, tasting was very flat like water and alcohol. Might have drank this past it's window",
+        "variety" : "Touriga Franca",
+        "region" : "Douro, Portugal",
+        "priceCAD" : -1
+    },
+    {
+        "image" : "./" + wine_dir + "/boschendal-2020.jpg",
+        "name" : "Boschendal ",
+        "vintage" : 2020,
+        "notes" : "Forgot to jot down notes after tasting. From what I remember, it was more earthy tones. Medium-full body and medium tannins.",
+        "variety" : "Pinotage",
+        "region" : "Stellenbosch, South Africa",
+        "priceCAD" : 20.95
+    },
+    {
+        "image" : "./" + wine_dir + "/anciano-2022.jpg",
+        "name" : "Anciano Rioja Garnacha",
+        "vintage" : 2022,
+        "notes" : "A simple dry wine. Medium-full body, medium tannins. Some peppery notes. Not bad for the cost but definitely feels like its lacking in complexity",
+        "variety" : "Garnacha",
+        "region" : "Rioja, Spain",
+        "priceCAD" : 12.95
     }
 ]
