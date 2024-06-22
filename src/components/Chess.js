@@ -1,4 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import moment from "moment";
+import {
+    ScatterChart,
+    Scatter,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    Legend,
+    ResponsiveContainer,
+  } from 'recharts';
+
+const RenderNoShape = (props)=>{ 
+    return null; 
+}
+
+const NUM_DAYS_HISTORY = 30;
 
 const token = 'lip_5muroQrpPxYzLwhRs59J';
 const CHESS_DOT_COM_USERNAME = "dragonsp";
@@ -16,6 +33,211 @@ const CHESS_DOT_COM_TIME_CONTROL_MAP = {
 }
 
 const TIME_CONTROLS = ["Bullet", "Blitz", "Rapid"]
+
+function RatingChart(today, ratingMap, minRating, maxRating) {
+    // Add current rating to end and get min time for ticks
+    let minTime = today.getTime() / 1000
+    for (const data of Object.values(ratingMap)) {
+        if (data.length > 0) {
+            let current = {'rating' : data[data.length -1]["rating"],
+                'time' : today.getTime() / 1000
+            }
+            data.push(current)
+
+            minTime = Math.min(minTime, data[0]['time'])
+        }
+      }
+
+    var ratingTicks = []
+    const interval = 50
+    let initRating = (Math.floor(minRating / interval) - 1) * interval
+    let finalRating = (Math.ceil(maxRating / interval)) * interval
+    while (initRating <= finalRating) {
+        ratingTicks.push(initRating);
+        initRating += interval
+    }
+
+    var dateTicks = []
+    let initTime = today.getTime() / 1000
+    while (initTime > minTime) {
+        dateTicks.push(Math.ceil(initTime))
+        initTime -= (3600 * 24 * 7); // 1 Week
+    }
+
+    return (
+        <ResponsiveContainer width="100%" height={500}>
+        <ScatterChart
+          margin={{
+            top: 20,
+            right: 20,
+            bottom: 20,
+            left: 20,
+          }}
+        >
+          <CartesianGrid />
+          <XAxis type="number" 
+            domain={[dateTicks[dateTicks.length - 1], dateTicks[0]]} allowDataOverflow 
+            dataKey="time" name="Date" 
+            tickFormatter={unixTime => moment(unixTime * 1000).format("DD-MM-YY")}
+            ticks={dateTicks} />
+          <YAxis type="number" 
+            domain={["auto", "auto"]} 
+            dataKey="rating" 
+            name="Rating" 
+            ticks={ratingTicks} />
+          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+          <Legend />
+          <Scatter name="Rapid" data={ratingMap["rapid"]} fill="#137d39" line={{strokeWidth: 2}} shape={<RenderNoShape />} />
+          <Scatter name="Blitz" data={ratingMap["blitz"]} fill="#34eb77" line={{strokeWidth: 2}} shape={<RenderNoShape />} />
+          <Scatter name="Bullet" data={ratingMap["bullet"]} fill="#a6ffc6" line={{strokeWidth: 2}} shape={<RenderNoShape />} />
+        </ScatterChart>
+      </ResponsiveContainer>
+    )
+}
+
+function LichessRatingChart() {
+    const [ratingHistoryData, setRatingHistoryData] = useState(null);
+    useEffect(() => {
+        fetch('https://lichess.org/api/user/' + CHESS_DOT_COM_USERNAME + '/rating-history')
+          .then(response => response.json())
+          .then(responseJson => {
+            setRatingHistoryData(responseJson);
+        })
+          .catch(error => console.error(error));
+      }, []);
+
+    const ratingMap = {
+        "bullet" : [],
+        "blitz" : [],
+        "rapid" : [],
+    }
+    let [minRating, maxRating] = [Number.MAX_SAFE_INTEGER, 0];
+    const today = new Date();
+    const pastDate = new Date();
+    pastDate.setDate(pastDate.getDate() - NUM_DAYS_HISTORY)
+    if (ratingHistoryData) {
+        ratingHistoryData.forEach(data => {
+            let timeControl = data["name"].toLowerCase();
+            if (timeControl in ratingMap) {
+                let points = data["points"]
+                points.forEach(point => {
+                        let pointDate = new Date(point[0], point[1], point[2])
+                        if (pointDate >= pastDate) {
+                            let rating = point[3]
+                            let endTime = pointDate.getTime()
+
+                            ratingMap[timeControl].push({
+                                "rating" : rating,
+                                "time" : endTime
+                            })
+                            minRating = Math.min(minRating, rating)
+                            maxRating = Math.max(maxRating, rating)
+                        }
+    
+                    }
+                )
+
+                // Handle empty rating map
+                if (ratingMap[timeControl].length === 0) {
+                    let currentRating = points[points.length - 1][3];
+                    ratingMap[timeControl].push({
+                        "rating" : currentRating,
+                        "time" : pastDate.getTime() / 1000
+                    })
+                    minRating = Math.min(minRating, currentRating)
+                    maxRating = Math.max(maxRating, currentRating)
+                }
+            }
+        })
+    }
+    return RatingChart(today, ratingMap, minRating, maxRating)
+}
+
+function ChessComRatingChart() {
+    const [thisMonthData, setThisMonthData] = useState(null);
+    const [pastMonthData, setPastMonthData] = useState(null);
+    
+    // Get rating history
+    const today = new Date();
+    const pastDate = new Date();
+    pastDate.setDate(pastDate.getDate() - NUM_DAYS_HISTORY)
+    const thisMonth = today.getMonth() + 1;
+    const pastMonth = pastDate.getMonth() + 1;
+    const thisYear = today.getFullYear();
+    const pastYear = pastDate.getFullYear();
+
+    // Get this month's archive
+    useEffect(() => {
+        fetch('https://api.chess.com/pub/player/' + CHESS_DOT_COM_USERNAME + '/games/' + thisYear + '/' + String(thisMonth).padStart(2, '0'))
+          .then(response => response.json())
+          .then(responseJson => {
+            setThisMonthData(responseJson);
+        })
+          .catch(error => console.error(error));
+      });
+
+    // Get last month's archive if different
+    useEffect(() => {
+        if (thisMonth !== pastMonth) {
+            fetch('https://api.chess.com/pub/player/' + CHESS_DOT_COM_USERNAME + '/games/' + pastYear + '/' + String(pastMonth).padStart(2, '0'))
+                .then(response => response.json())
+                .then(responseJson => {
+                setPastMonthData(responseJson);
+            })
+                .catch(error => console.error(error));
+        }
+        });
+
+
+    // Initialize data
+    const ratingMap = {
+        "bullet" : [],
+        "blitz" : [],
+        "rapid" : [],
+    }
+
+    let [minRating, maxRating] = [Number.MAX_SAFE_INTEGER, 0];
+
+    // list of dictionaries with keys of value (rating) and time (unix)
+    if (pastMonthData != null) {
+        let games = pastMonthData["games"]
+        games.forEach(game => {
+            let timeControl = game["time_class"]
+            if (timeControl in ratingMap) {
+                let endTime = game["end_time"]
+                let rating = game["white"]["username"] === CHESS_DOT_COM_USERNAME ? game["white"]["rating"] : game["black"]["rating"]
+                ratingMap[timeControl].push({
+                    "rating" : rating,
+                    "time" : endTime
+                })
+                minRating = Math.min(minRating, rating)
+                maxRating = Math.max(maxRating, rating)
+            }
+        }); 
+    }
+
+    if (thisMonthData != null) {
+        let games = thisMonthData["games"]
+        games.forEach(game => {
+            let timeControl = game["time_class"]
+            if (timeControl in ratingMap) {
+                let endTime = game["end_time"]
+                let rating = game["white"]["username"] === CHESS_DOT_COM_USERNAME ? game["white"]["rating"] : game["black"]["rating"]
+                ratingMap[timeControl].push({
+                    "rating" : rating,
+                    "time" : endTime
+                })
+                minRating = Math.min(minRating, rating)
+                maxRating = Math.max(maxRating, rating)
+            }
+            
+        }); 
+    }
+
+    // TODO handle empty data - if no games played for 2 months
+
+    return RatingChart(today, ratingMap, minRating, maxRating)
+}
 
 export default function Chess() {
     const [lichessData, setLichessData] = useState(null);
@@ -67,10 +289,9 @@ export default function Chess() {
                         ))
                     }
                 </div>
-                    
-                <br></br>
+                <LichessRatingChart></LichessRatingChart>
 
-                <div className="flex items-center justify-center mb-2">
+                <div className="mt-6 flex items-center justify-center mb-2">
                     <img src="./chesscom.png" alt="chess.com" className="w-7 h-10" />
                     <h2 className="text-lg font-semibold ml-4">Chess.com</h2>
                 </div>
@@ -90,6 +311,7 @@ export default function Chess() {
                         ))
                     }
                 </div>
+                <ChessComRatingChart></ChessComRatingChart>
             </div>
         </section>
     );
