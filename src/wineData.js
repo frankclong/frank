@@ -116,5 +116,23 @@ export const WINES = [
         "variety" : "Garnacha",
         "region" : "Rioja, Spain",
         "priceCAD" : 12.95
+    },
+    {
+        "image" : "./" + wine_dir + "/via-2020.jpg",
+        "name" : "Via Caritatis Vox Angelorum",
+        "vintage" : 2020,
+        "notes" : "Dry, high tannins, long finish, alcohol was a little oppressive at times. Spice notes. A lovely wine.",
+        "variety" : "Syrah, Grenache",
+        "region" : "Southern Rhône, France",
+        "priceCAD" : 17.95
+    },
+    {
+        "image" : "./" + wine_dir + "/intrinsic.jpg",
+        "name" : "Intrinsic Red Blend",
+        "vintage" : 2020,
+        "notes" : "Purchased during trip to Seattle. Dry, full bodied wine with tannins. Mix of dark fruit and oaky aromas",
+        "variety" : "Malbec, Cabernet Franc",
+        "region" : "Washington, United States",
+        "priceCAD" : 44.42
     }
 ]
