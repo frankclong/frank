@@ -7,6 +7,7 @@ import Wine from './components/Wine.js';
 import Artworks from './components/Artworks.js';
 import Plants from './components/Plants.js';
 import Crochet from './components/Crochet.js';
+import Travel from './components/Travel.js';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <About /> 
       <Hobbies />
+      <Travel />
       <Chess />
       <Wine />
       <Artworks />
