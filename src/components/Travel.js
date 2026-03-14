@@ -1,58 +1,65 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { TRAVELS } from "../travelData";
 
-const NUM_COLUMNS = 3
-
-function TravelEntry({trip}) {
-    const importAllImages = (requireContext) => {
-        return requireContext.keys().map(requireContext);
-      };
-    console.log(trip.imgDir)
-    // const images = importAllImages(require.context(trip.imgDir, false, /\.jpg$/));
-
-    // const images = importAllImages(require.context('${trip.imgDir}' , false, /\.jpg$/));
-
-
-    let images = [];
+// Function to dynamically require images from a specific folder
+const loadTravelImages = (folderName) => {
     try {
-      // Dynamically require all .jpg files from the folder
-      var fpath = '../travel/argentina-2024';
-    //   images = importAllImages(require.context(`${fpath}`, false, /\.jpg$/));
-      images = importAllImages(require.context(`${fpath}`, false, /\.jpg$/));
+        // Use require.context to dynamically load all jpg images from the folder
+        // When new images are added, webpack will include them on rebuild
+        const context = require.context("../travel", true, /\.jpg$/);
+        const folderImages = context
+            .keys()
+            .filter((key) => key.includes(`/${folderName}/`))
+            .map((key) => context(key));
+        
+        return folderImages;
     } catch (error) {
-      console.error(`Error loading images from folder "${trip.imgDir}":`, error.message);
+        console.warn(`Could not load images from travel/${folderName}:`, error.message);
+        return [];
+    }
+};
+
+function TravelEntry({ trip }) {
+    const images = useMemo(() => loadTravelImages(trip.folderName), [trip.folderName]);
+
+    if (images.length === 0) {
+        return null;
     }
 
     return (
-        <div className="grid grid-cols-5">
-            {images.map((image, i) => (
-                <img src={image} alt={i} className="object-contain"></img>
-            ))
-            }
-
+        <div className="w-full">
+            <h2 className="text-2xl font-semibold mb-6 text-white">{trip.tripName}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+                {images.map((image, i) => (
+                    <div key={`${trip.folderName}-${i}`} className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gray-800">
+                        <img
+                            src={image}
+                            alt={`${trip.tripName} ${i + 1}`}
+                            className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        />
+                    </div>
+                ))}
+            </div>
         </div>
-    )
+    );
 }
 
 function Travel() {
     return (
         <section id="travel">
-            <div className="bg-blue-950 px-5 py-5 mx-auto text-center lg:px-40 text-white">   
-                <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
+            <div className="bg-blue-950 px-5 py-10 mx-auto lg:px-40 text-white">
+                <h1 className="sm:text-4xl text-3xl font-medium title-font mb-12 text-center text-white">
                     Travel
                 </h1>
 
-                {TRAVELS.map((trip) => (
-                    <div key={trip.tripName} className = "flex items-center justify-center mb-4">
-                    <div className="bg-blue-900 shadow-md rounded-md p-8 max-w-2xl w-full">
-                        <TravelEntry trip={trip}/>   
-                    </div>
-                    </div>
-                ))}
-            
+                <div className="mx-auto max-w-7xl">
+                    {TRAVELS.map((trip) => (
+                        <TravelEntry key={trip.tripName} trip={trip} />
+                    ))}
+                </div>
             </div>
         </section>
-    )
+    );
 }
 
 export default Travel;
