@@ -19,7 +19,7 @@ const loadTravelImages = (folderName) => {
     }
 };
 
-function TravelEntry({ trip }) {
+const TravelEntry = React.memo(function TravelEntry({ trip }) {
     const images = useMemo(() => loadTravelImages(trip.folderName), [trip.folderName]);
 
     if (images.length === 0) {
@@ -31,18 +31,19 @@ function TravelEntry({ trip }) {
             <h2 className="text-2xl font-semibold mb-6 text-white">{trip.tripName}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
                 {images.map((image, i) => (
-                    <div key={`${trip.folderName}-${i}`} className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gray-800">
+                    <div key={`${trip.folderName}-${i}`} className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 bg-gray-800 will-change-transform">
                         <img
                             src={image}
                             alt={`${trip.tripName} ${i + 1}`}
-                            className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                            loading="lazy"
+                            className="w-full h-64 object-cover hover:scale-105 transition-transform duration-200 cursor-pointer"
                         />
                     </div>
                 ))}
             </div>
         </div>
     );
-}
+});
 
 function Travel() {
     return (
