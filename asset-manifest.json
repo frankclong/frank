@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frank/static/css/main.ec3a4384.css",
-    "main.js": "/frank/static/js/main.358c82b4.js",
+    "main.css": "/frank/static/css/main.83c7ff45.css",
+    "main.js": "/frank/static/js/main.e9acea03.js",
     "static/js/453.3ca44f74.chunk.js": "/frank/static/js/453.3ca44f74.chunk.js",
     "static/media/PXL_20241118_145242764.jpg": "/frank/static/media/PXL_20241118_145242764.95385824caf254d95726.jpg",
     "static/media/PXL_20241118_135523566.jpg": "/frank/static/media/PXL_20241118_135523566.5696e945e697aebefae9.jpg",
@@ -45,12 +45,12 @@
     "static/media/PXL_20250925_104244422.jpg": "/frank/static/media/PXL_20250925_104244422.a8a11c44f265deead510.jpg",
     "static/media/IMG_1606.jpg": "/frank/static/media/IMG_1606.8f3933b0f46d72de2e9e.jpg",
     "index.html": "/frank/index.html",
-    "main.ec3a4384.css.map": "/frank/static/css/main.ec3a4384.css.map",
-    "main.358c82b4.js.map": "/frank/static/js/main.358c82b4.js.map",
+    "main.83c7ff45.css.map": "/frank/static/css/main.83c7ff45.css.map",
+    "main.e9acea03.js.map": "/frank/static/js/main.e9acea03.js.map",
     "453.3ca44f74.chunk.js.map": "/frank/static/js/453.3ca44f74.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec3a4384.css",
-    "static/js/main.358c82b4.js"
+    "static/css/main.83c7ff45.css",
+    "static/js/main.e9acea03.js"
   ]
 }
