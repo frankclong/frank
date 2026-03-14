@@ -17,7 +17,7 @@ const RenderNoShape = (props)=>{
 
 const NUM_DAYS_HISTORY = 30;
 
-const token = 'lip_5muroQrpPxYzLwhRs59J';
+const LICHESS_USERNAME = "dragonsp";
 const CHESS_DOT_COM_USERNAME = "dragonsp";
 
 const LICHESS_TIME_CONTROL_MAP = {
@@ -244,14 +244,12 @@ export default function Chess() {
     const [chessDotComData, setChessDotComData] = useState(null);
 
     useEffect(() => {
-        fetch('https://lichess.org/api/account', {
-            headers: {Authorization : 'Bearer ' + token}
-        })
-          .then(response => response.json())
-          .then(responseJson => {
-            setLichessData(responseJson);
-        })
-          .catch(error => console.error(error));
+        fetch('https://lichess.org/api/user/' + LICHESS_USERNAME)
+            .then(response => response.json())
+            .then(responseJson => {
+                setLichessData(responseJson);
+            })
+            .catch(error => console.error(error));
       }, []);
       
     useEffect(() => {
